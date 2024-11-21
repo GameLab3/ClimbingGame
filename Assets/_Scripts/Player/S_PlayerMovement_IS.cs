@@ -7,6 +7,8 @@ public class S_PlayerMovement_IS : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float gravity = 20f;
     
+    [SerializeField] private bool reverseControls;
+    
     private float _movementX;
     private float _movementY;
     private float _ySpeed;
@@ -24,6 +26,10 @@ public class S_PlayerMovement_IS : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         Vector2 input = inputValue.Get<Vector2>();
+        if (reverseControls)
+        {
+            input *= -1;
+        }
         _movementX = input.x;
         _movementY = input.y;
         
