@@ -26,7 +26,7 @@ public class S_PlayerMovement_IS : MonoBehaviour
         Vector2 input = inputValue.Get<Vector2>();
         _movementX = input.x;
         _movementY = input.y;
-
+        
         if (_movementX == 0 && _movementY == 0) return;
         transform.rotation = Quaternion.Euler(0, GetRotation(), 0);
     }
