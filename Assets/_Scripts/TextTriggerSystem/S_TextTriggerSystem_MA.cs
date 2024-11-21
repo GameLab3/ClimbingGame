@@ -1,20 +1,26 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_TextTriggerSystem_MA : MonoBehaviour
 {
     [SerializeField] List<string> dialogueText = new List<string>();
     int displayNumber;
 
-    TMP_Text textBox;
+    [SerializeField] TMP_Text textBox;
+    [SerializeField] GameObject dialogueParent;
     bool textCanProgress;
     bool hasHappened;
 
-    void Start()
+    [SerializeField] bool hasQuestions;
+    [SerializeField] GameObject buttons;
+
+    void SetActive()
     {
-        textBox = FindFirstObjectByType<TMP_Text>();
+        dialogueParent.SetActive(true);
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +28,7 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
         
         if(!hasHappened)
         {
-            textBox.gameObject.SetActive(true);
+            SetActive();
             DisplayText();
             hasHappened = true;
         }
@@ -43,8 +49,13 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
         }
         else if (textCanProgress && dialogueText.Count >= displayNumber)
         {
-            textBox.gameObject.SetActive(false);
+            CheckIfDone();
             Destroy(gameObject);
         }
-    }
+    } 
+        void CheckIfDone()
+        {
+            if (hasQuestions) { buttons.SetActive(true); }
+            else { buttons.SetActive(false); dialogueParent.SetActive(false); }
+        }
 }
