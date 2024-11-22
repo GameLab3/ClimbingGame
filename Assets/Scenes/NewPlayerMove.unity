@@ -3319,6 +3319,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1853651105137086898, guid: d56f8b496688d2b43a98a9d4fe60fad2, type: 3}
   m_PrefabInstance: {fileID: 1886016096}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &945513127 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7001394119136875504, guid: 6a97a14286b8f234a88cbf35e9360e4b, type: 3}
+  m_PrefabInstance: {fileID: 6888884037131586963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &955566635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7575,6 +7580,10 @@ PrefabInstance:
       propertyPath: dashForce
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6318099070729336365, guid: 6a97a14286b8f234a88cbf35e9360e4b, type: 3}
+      propertyPath: foxAnimator
+      value: 
+      objectReference: {fileID: 945513127}
     - target: {fileID: 6318099070729336365, guid: 6a97a14286b8f234a88cbf35e9360e4b, type: 3}
       propertyPath: dashDuration
       value: 0.2
