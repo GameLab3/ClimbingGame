@@ -35,7 +35,6 @@ public class S_IncorrectAnswer_MA : MonoBehaviour
 
     public void InstantiateEnd()
     {
-        Debug.Log("instant");
         textCanProgress = true;
 
         if (!hasHappened)
