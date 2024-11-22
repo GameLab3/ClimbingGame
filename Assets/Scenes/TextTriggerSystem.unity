@@ -1509,6 +1509,10 @@ PrefabInstance:
       propertyPath: option1.isCorrect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[0].options.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
