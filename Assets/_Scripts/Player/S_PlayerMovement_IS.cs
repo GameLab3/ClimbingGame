@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,12 +7,20 @@ public class S_PlayerMovement_IS : MonoBehaviour
     [SerializeField] private float speed = 6f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float gravity = 20f;
-    
+    [SerializeField] private float dashForce = 10f;
+    [SerializeField] private float dashDuration = 0.5f;
+
+    [SerializeField] private bool canDash;
     [SerializeField] private bool reverseControls;
     
     private float _movementX;
     private float _movementY;
     private float _ySpeed;
+
+    private bool _hasDashed;
+    private bool _isDashing;
+    private float _dashX;
+    private float _dashY;
 
     private Vector2 _rotationVector;
     
@@ -26,6 +35,12 @@ public class S_PlayerMovement_IS : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         Vector2 input = inputValue.Get<Vector2>();
+        if (_isDashing)
+        {
+            _dashX = input.x;
+            _dashY = input.y;
+            return;
+        }
         if (reverseControls)
         {
             input *= -1;
@@ -43,21 +58,59 @@ public class S_PlayerMovement_IS : MonoBehaviour
         {
             _ySpeed = jumpForce;
         }
+        else if (canDash && !_isDashing && !_hasDashed)
+        {
+            StartCoroutine(Dash());
+            _dashX = _movementX;
+            _dashY = _movementY;
+            _movementX = 0;
+            _movementY = 0;
+        }
     }
     
     private void Update()
     {
-        if (!_controller.isGrounded)
+        if (!_controller.isGrounded && !_isDashing)
         {
             _ySpeed -= gravity * Time.deltaTime;
         }
-        _moveDirection = new Vector3(_movementX, _ySpeed, _movementY);
-        _moveDirection *= speed;
+
+        if (!_isDashing)
+        {
+            _moveDirection = new Vector3(_movementX, _ySpeed, _movementY);
+            _moveDirection *= speed;
+        }
+        else
+        {
+            _moveDirection = transform.forward;
+            _moveDirection *= dashForce;
+        }
+        
         _controller.Move(_moveDirection * Time.deltaTime);
         
         if (_controller.isGrounded && !Mathf.Approximately(_ySpeed, -1))
         {
             _ySpeed = -1f;
+        }
+
+        if (_controller.isGrounded && _hasDashed)
+        {
+            _hasDashed = false;
+        }
+    }
+    
+    IEnumerator Dash()
+    {
+        _isDashing = true;
+        _hasDashed = true;
+        _ySpeed = 0;
+        yield return new WaitForSeconds(dashDuration);
+        _isDashing = false;
+        _movementX = _dashX;
+        _movementY = _dashY;
+        if (_movementX != 0 || _movementY != 0)
+        {
+            transform.rotation = Quaternion.Euler(0, GetRotation(), 0);
         }
     }
 
