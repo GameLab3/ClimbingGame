@@ -15,8 +15,8 @@ public class S_PauseMenu__MA : MonoBehaviour
 
     void OnEscape()
     {
-            pauseMenu.SetActive(pauseMenuIsActive);
             pauseMenuIsActive = !pauseMenuIsActive;
+            pauseMenu.SetActive(pauseMenuIsActive);
     }
 
     public void RestartScene()
