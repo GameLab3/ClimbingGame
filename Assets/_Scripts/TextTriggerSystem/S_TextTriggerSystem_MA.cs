@@ -18,6 +18,13 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
     [SerializeField] S_ButtonHandler_MA buttonPrefab;
     [SerializeField] Transform buttonsParent;
 
+    S_IncorrectAnswer_MA S_IncorrectAnswer_MA;
+
+    private void Start()
+    {
+        S_IncorrectAnswer_MA = FindFirstObjectByType<S_IncorrectAnswer_MA>();
+    }
+
     bool isAtQuestion;
 
     void SetActive()
@@ -99,9 +106,11 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
     public void WrongOption()
     {
         print("isn't correct :(");
-        Destroy(gameObject);
-        //buttons.SetActive(false);
-        //S_IncorrectAnswer_MA.InstantiateEnd();
+        foreach (Transform item in buttonsParent)
+        {
+            Destroy(item.gameObject);
+        }
+        S_IncorrectAnswer_MA.InstantiateEnd();
     }
 }
 
