@@ -70,6 +70,7 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
         else if (textCanProgress && dialogueText.Count >= displayNumber)
         {
             dialogueParent.SetActive(false);
+            Destroy(gameObject);
         }
     }
     void AskQuestion()
