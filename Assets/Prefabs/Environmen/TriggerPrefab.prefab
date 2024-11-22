@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10, y: 5, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 27.3137, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,7 +49,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText:
-  - Text: 
+  - Text: I have always wanted to go up here again.
+    isQuestion: 0
+    options: []
+  - Text: When I was younger I did it a lot.
+    isQuestion: 0
+    options: []
+  - Text: You can see my old house from the top
+    isQuestion: 0
+    options: []
+  - Text: I have been so tired lately.
+    isQuestion: 0
+    options: []
+  - Text: I don't go outside often.
+    isQuestion: 1
+    options:
+    - Answer: Who are you talking to?
+      assosiatedButton: {fileID: 0}
+      isCorrect: 0
+    - Answer: Why not?
+      assosiatedButton: {fileID: 0}
+      isCorrect: 1
+  - Text: I don't have time
+    isQuestion: 0
+    options: []
+  - Text: Which is weird because I don't really do that much.
+    isQuestion: 0
+    options: []
+  - Text: But I don't have time to do anything.
     isQuestion: 0
     options: []
   textBox: {fileID: 0}
