@@ -369,3 +369,7 @@ MonoBehaviour:
   speed: 6
   jumpForce: 5
   gravity: 20
+  dashForce: 30
+  dashDuration: 0.2
+  canDash: 0
+  reverseControls: 0
