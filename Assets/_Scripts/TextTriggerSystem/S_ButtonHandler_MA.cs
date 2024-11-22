@@ -1,26 +1,22 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_ButtonHandler_MA : MonoBehaviour
 {
-    [SerializeField] GameObject buttons;
-
-    S_IncorrectAnswer_MA S_IncorrectAnswer_MA;
-
-    private void Start()
+    public Button button { get; private set; }
+    [SerializeField] TMP_Text text;
+    ButtonSpecifics buttonSpecifics;
+    public void InitializeButton(ButtonSpecifics specifics)
     {
-        S_IncorrectAnswer_MA = GetComponent<S_IncorrectAnswer_MA>();
+        buttonSpecifics = specifics;
+        button = GetComponent<Button>();
+        UpdateButton();
     }
 
-    public void CorrectOption()
+    void UpdateButton()
     {
-        buttons.SetActive(false);
-    }
-
-    public void WrongOption()
-    {
-        buttons.SetActive(false);
-        S_IncorrectAnswer_MA.InstantiateEnd();
+        text.text = buttonSpecifics.Answer;
     }
 }
