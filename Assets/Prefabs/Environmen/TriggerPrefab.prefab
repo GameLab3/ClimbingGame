@@ -49,9 +49,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText:
-  - Hello player
-  - How are you doing
-  - sample text
+  - Text: 
+    isQuestion: 0
+    options: []
+  textBox: {fileID: 0}
+  dialogueParent: {fileID: 0}
+  hasQuestions: 1
+  buttonPrefab: {fileID: 7338304764094535708, guid: ed143a3cc88f6494d8de5841348e126b, type: 3}
+  buttonsParent: {fileID: 0}
 --- !u!33 &5829550607940748354
 MeshFilter:
   m_ObjectHideFlags: 0
