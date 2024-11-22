@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class S_PlayerMovement_IS : MonoBehaviour
 {
+    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     [SerializeField] private float speed = 6f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float gravity = 20f;
@@ -12,6 +13,8 @@ public class S_PlayerMovement_IS : MonoBehaviour
 
     [SerializeField] private bool canDash;
     [SerializeField] private bool reverseControls;
+
+    [SerializeField] private Animator foxAnimator;
     
     private float _movementX;
     private float _movementY;
@@ -35,21 +38,27 @@ public class S_PlayerMovement_IS : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         Vector2 input = inputValue.Get<Vector2>();
+        if (reverseControls)
+        {
+            input *= -1;
+        }
         if (_isDashing)
         {
             _dashX = input.x;
             _dashY = input.y;
             return;
         }
-        if (reverseControls)
-        {
-            input *= -1;
-        }
         _movementX = input.x;
         _movementY = input.y;
-        
-        if (_movementX == 0 && _movementY == 0) return;
-        transform.rotation = Quaternion.Euler(0, GetRotation(), 0);
+
+        if (_movementX != 0 || _movementY != 0)
+        {
+            transform.rotation = Quaternion.Euler(0, GetRotation(), 0);
+        }
+        else
+        {
+            foxAnimator.SetBool(IsWalking, false);
+        }
     }
     
     private void OnJump()
@@ -57,6 +66,7 @@ public class S_PlayerMovement_IS : MonoBehaviour
         if (_controller.isGrounded)
         {
             _ySpeed = jumpForce;
+            foxAnimator.SetBool(IsWalking, false);
         }
         else if (canDash && !_isDashing && !_hasDashed)
         {
@@ -79,6 +89,10 @@ public class S_PlayerMovement_IS : MonoBehaviour
         {
             _moveDirection = new Vector3(_movementX, _ySpeed, _movementY);
             _moveDirection *= speed;
+            if (_movementX != 0 || _movementY != 0)
+            {
+                foxAnimator.SetBool(IsWalking, _controller.isGrounded);
+            }
         }
         else
         {
