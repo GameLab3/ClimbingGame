@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 9018289454182564412}
   - component: {fileID: 7384862250071525185}
   - component: {fileID: 4388259600703810201}
+  - component: {fileID: 5681859280687764316}
+  - component: {fileID: 5323304564941343500}
   m_Layer: 6
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -60,8 +62,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2699994973611576225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28537917, y: -0.25496146, z: 0.079045445, w: 0.9204919}
-  m_LocalPosition: {x: 6, y: 8, z: -10}
+  m_LocalRotation: {x: 0.35575995, y: -0.2480795, z: 0.098539785, w: 0.8956458}
+  m_LocalPosition: {x: 6, y: 11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,11 +126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 0, y: 0, z: 0}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 6, y: 8, z: -10}
+  FollowOffset: {x: 6, y: 11, z: -10}
 --- !u!114 &4388259600703810201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +160,37 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
+--- !u!114 &5681859280687764316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699994973611576225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6522e1fa63c28408907a03e9a9d45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraFollow: {fileID: 7384862250071525185}
+  flipTime: 3
+--- !u!114 &5323304564941343500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699994973611576225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e21a98ef1742e742a7f82ad7138883f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStartY: 0
+  playerEndY: 100
+  postProcessVolume: {fileID: 0}
+  saturationValue: -100
+  saturationMultiplier: 0.014
 --- !u!1 &8974461512186384415
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,5 +460,7 @@ MonoBehaviour:
   dashForce: 30
   dashDuration: 0.2
   canDash: 0
-  reverseControls: 0
+  reverseAllControls: 0
+  reverseControlsUpDown: 0
+  reverseControlsLeftRight: 0
   foxAnimator: {fileID: 7001394119136875504}
