@@ -12,6 +12,7 @@ public class S_PlayerMovement_IS : MonoBehaviour
     [SerializeField] private float dashDuration = 0.5f;
 
     [SerializeField] private bool canDash;
+    [SerializeField] private bool reverseAllControls;
     [SerializeField] private bool reverseControlsUpDown;
     [SerializeField] private bool reverseControlsLeftRight;
 
@@ -41,6 +42,11 @@ public class S_PlayerMovement_IS : MonoBehaviour
         canDash = value;
     }
     
+    public void ReverseAllControls(bool value)
+    {
+        reverseAllControls = value;
+    }
+    
     public void ReverseControlsUpDown(bool value)
     {
         reverseControlsUpDown = value;
@@ -54,6 +60,10 @@ public class S_PlayerMovement_IS : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         Vector2 input = inputValue.Get<Vector2>();
+        if (reverseAllControls)
+        {
+            input *= -1;
+        }
         if (reverseControlsUpDown)
         {
             input.y *= -1;
