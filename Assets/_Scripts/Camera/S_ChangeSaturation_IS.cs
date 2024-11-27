@@ -45,4 +45,9 @@ public class S_ChangeSaturation_IS : MonoBehaviour
     {
         ChangeSaturation();
     }
+    
+    public void ChangeMinSaturation(float value)
+    {
+        minSaturationValue = value;
+    }
 }
