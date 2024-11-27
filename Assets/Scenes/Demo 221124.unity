@@ -756,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622035903508067817, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: m_Name
-      value: TriggerPrefab (6)
+      value: DashTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
@@ -8982,6 +8982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 826578319857466709, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
+      propertyPath: endScene
+      value: BadEndScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2783875107056245630, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
