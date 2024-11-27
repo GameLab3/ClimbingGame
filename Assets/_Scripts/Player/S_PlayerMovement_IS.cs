@@ -66,7 +66,14 @@ public class S_PlayerMovement_IS : MonoBehaviour
     public void Respawn()
     {
         _controller.enabled = false;
-        transform.localPosition = _checkPoint != null ? _checkPoint.transform.position : Vector3.zero;
+        if (_checkPoint != null)
+        {
+            transform.position = _checkPoint.transform.position;
+        }
+        else
+        {
+            transform.localPosition = Vector3.zero;
+        }
         _controller.enabled = true;
     }
 
