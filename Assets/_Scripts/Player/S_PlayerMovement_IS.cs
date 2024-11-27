@@ -12,7 +12,8 @@ public class S_PlayerMovement_IS : MonoBehaviour
     [SerializeField] private float dashDuration = 0.5f;
 
     [SerializeField] private bool canDash;
-    [SerializeField] private bool reverseControls;
+    [SerializeField] private bool reverseControlsUpDown;
+    [SerializeField] private bool reverseControlsLeftRight;
 
     [SerializeField] private Animator foxAnimator;
     
@@ -34,13 +35,32 @@ public class S_PlayerMovement_IS : MonoBehaviour
     {
         _controller = GetComponent<CharacterController>();
     }
+    
+    public void DashAllowed(bool value)
+    {
+        canDash = value;
+    }
+    
+    public void ReverseControlsUpDown(bool value)
+    {
+        reverseControlsUpDown = value;
+    }
+    
+    public void ReverseControlsLeftRight(bool value)
+    {
+        reverseControlsLeftRight = value;
+    }
 
     private void OnMove(InputValue inputValue)
     {
         Vector2 input = inputValue.Get<Vector2>();
-        if (reverseControls)
+        if (reverseControlsUpDown)
         {
-            input *= -1;
+            input.y *= -1;
+        }
+        if (reverseControlsLeftRight)
+        {
+            input.x *= -1;
         }
         if (_isDashing)
         {
