@@ -4659,6 +4659,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 826578319857466709, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
+      propertyPath: endScene
+      value: Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 1127213797259427582, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -5595,7 +5599,7 @@ PrefabInstance:
       objectReference: {fileID: 1033518135}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[0].Text
@@ -5603,12 +5607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[1].Text
-      value: I thought it would be way worse.
+      value: I hope so..
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[2].Text
-      value: "I don\u2019t know how pretending to be a fox and making you up in my
-        mind helped."
+      value: I'll just lay here for now
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[3].Text
@@ -5623,12 +5626,20 @@ PrefabInstance:
       value: Thank you for helping me.
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[6].Text
+      value: Thank you for helping me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[0].isQuestion
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[1].isQuestion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[2].isQuestion
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[3].isQuestion
@@ -5639,12 +5650,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[5].isQuestion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[0].options.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[1].options.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[2].options.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[3].options.Array.size
@@ -5655,16 +5674,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[5].options.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[0].options.Array.data[0].Answer
-      value: Good job
+      value: You will do it next time
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[1].options.Array.data[0].Answer
-      value: Good job
+      value: You will do it next time
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[2].options.Array.data[0].Answer
+      value: Oh okay good luck bye
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[3].options.Array.data[0].Answer
       value: Thats good
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[5].options.Array.data[0].Answer
+      value: I should leave now (go to menu)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[5].options.Array.data[1].Answer
+      value: I should leave now.
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[0].options.Array.data[0].isCorrect
