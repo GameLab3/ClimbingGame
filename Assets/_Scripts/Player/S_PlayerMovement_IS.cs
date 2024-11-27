@@ -31,10 +31,16 @@ public class S_PlayerMovement_IS : MonoBehaviour
     
     private Vector3 _moveDirection = Vector3.zero;
     private CharacterController _controller;
+    private S_CheckPoint_IS _checkPoint;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
+    }
+    
+    public void SetCheckPoint(S_CheckPoint_IS checkPoint)
+    {
+        _checkPoint = checkPoint;
     }
     
     public void DashAllowed(bool value)
@@ -55,6 +61,20 @@ public class S_PlayerMovement_IS : MonoBehaviour
     public void ReverseControlsLeftRight(bool value)
     {
         reverseControlsLeftRight = value;
+    }
+    
+    public void Respawn()
+    {
+        _controller.enabled = false;
+        if (_checkPoint != null)
+        {
+            transform.position = _checkPoint.transform.position;
+        }
+        else
+        {
+            transform.localPosition = Vector3.zero;
+        }
+        _controller.enabled = true;
     }
 
     private void OnMove(InputValue inputValue)
@@ -143,7 +163,7 @@ public class S_PlayerMovement_IS : MonoBehaviour
         }
     }
     
-    IEnumerator Dash()
+    private IEnumerator Dash()
     {
         _isDashing = true;
         _hasDashed = true;
