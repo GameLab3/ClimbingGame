@@ -189,6 +189,8 @@ MonoBehaviour:
   playerStartY: 0
   playerEndY: 100
   postProcessVolume: {fileID: 0}
+  minSaturationValue: -100
+  maxSaturationValue: 40
   saturationValue: -100
   saturationMultiplier: 0.014
 --- !u!1 &8974461512186384415

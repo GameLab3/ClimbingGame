@@ -12,6 +12,8 @@ public class S_ChangeSaturation_IS : MonoBehaviour
     
     [Header("Saturation Settings")]
     [SerializeField] private Volume postProcessVolume;
+    [SerializeField] private float minSaturationValue = -100f;
+    [SerializeField] private float maxSaturationValue = 100f;
     [SerializeField] private float saturationValue = -100f;
     [SerializeField] private float saturationMultiplier = 0.014f;
     private ColorAdjustments _colorAdjustments;
@@ -35,7 +37,7 @@ public class S_ChangeSaturation_IS : MonoBehaviour
     {
         var playerY = transform.position.y - _cameraOffset;
         saturationValue = playerY*playerY*saturationMultiplier -100f;
-        saturationValue = Mathf.Clamp(saturationValue, -100f, 100f);
+        saturationValue = Mathf.Clamp(saturationValue, minSaturationValue, maxSaturationValue);
         _colorAdjustments.saturation.value = saturationValue;
     }
 
