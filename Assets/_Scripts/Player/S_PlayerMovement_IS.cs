@@ -12,7 +12,9 @@ public class S_PlayerMovement_IS : MonoBehaviour
     [SerializeField] private float dashDuration = 0.5f;
 
     [SerializeField] private bool canDash;
-    [SerializeField] private bool reverseControls;
+    [SerializeField] private bool reverseAllControls;
+    [SerializeField] private bool reverseControlsUpDown;
+    [SerializeField] private bool reverseControlsLeftRight;
 
     [SerializeField] private Animator foxAnimator;
     
@@ -29,18 +31,66 @@ public class S_PlayerMovement_IS : MonoBehaviour
     
     private Vector3 _moveDirection = Vector3.zero;
     private CharacterController _controller;
+    private S_CheckPoint_IS _checkPoint;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
     }
+    
+    public void SetCheckPoint(S_CheckPoint_IS checkPoint)
+    {
+        _checkPoint = checkPoint;
+    }
+    
+    public void DashAllowed(bool value)
+    {
+        canDash = value;
+    }
+    
+    public void ReverseAllControls(bool value)
+    {
+        reverseAllControls = value;
+    }
+    
+    public void ReverseControlsUpDown(bool value)
+    {
+        reverseControlsUpDown = value;
+    }
+    
+    public void ReverseControlsLeftRight(bool value)
+    {
+        reverseControlsLeftRight = value;
+    }
+    
+    public void Respawn()
+    {
+        _controller.enabled = false;
+        if (_checkPoint != null)
+        {
+            transform.position = _checkPoint.transform.position;
+        }
+        else
+        {
+            transform.localPosition = Vector3.zero;
+        }
+        _controller.enabled = true;
+    }
 
     private void OnMove(InputValue inputValue)
     {
         Vector2 input = inputValue.Get<Vector2>();
-        if (reverseControls)
+        if (reverseAllControls)
         {
             input *= -1;
+        }
+        if (reverseControlsUpDown)
+        {
+            input.y *= -1;
+        }
+        if (reverseControlsLeftRight)
+        {
+            input.x *= -1;
         }
         if (_isDashing)
         {
@@ -113,7 +163,7 @@ public class S_PlayerMovement_IS : MonoBehaviour
         }
     }
     
-    IEnumerator Dash()
+    private IEnumerator Dash()
     {
         _isDashing = true;
         _hasDashed = true;
