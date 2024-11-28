@@ -21,10 +21,19 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
     S_IncorrectAnswer_MA S_IncorrectAnswer_MA;
     S_DialogueColorSwitcher_MA S_DialogueColorSwitcher_MA;
 
+    int triggerInt;
+    [SerializeField] Transform parent;
+    BoxCollider nextTrigger;
+
     private void Start()
     {
         S_IncorrectAnswer_MA = FindFirstObjectByType<S_IncorrectAnswer_MA>();
         S_DialogueColorSwitcher_MA = FindFirstObjectByType<S_DialogueColorSwitcher_MA>();
+
+        triggerInt = transform.GetSiblingIndex() +1;
+        if (parent.transform.childCount <= triggerInt) { return; }
+
+        nextTrigger = parent.transform.GetChild(triggerInt).GetComponent<BoxCollider>();
     }
 
     bool isAtQuestion;
@@ -73,8 +82,9 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
         else if (textCanProgress && dialogueText.Count >= displayNumber)
         {
             dialogueParent.SetActive(false);
-            Destroy(gameObject);
+            nextTrigger.isTrigger = true;
             S_DialogueColorSwitcher_MA.ChangeCameraColors();
+            Destroy(gameObject);
         }
     }
     void AskQuestion()
