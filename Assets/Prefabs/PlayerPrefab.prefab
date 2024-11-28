@@ -187,12 +187,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStartY: 0
-  playerEndY: 100
+  playerEndY: 90
   postProcessVolume: {fileID: 0}
   minSaturationValue: -100
   maxSaturationValue: 40
   saturationValue: -100
-  saturationMultiplier: 0.014
+  saturationMultiplier: 0.0173
 --- !u!1 &8974461512186384415
 GameObject:
   m_ObjectHideFlags: 0
