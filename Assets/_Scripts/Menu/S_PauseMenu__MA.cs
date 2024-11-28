@@ -29,5 +29,10 @@ public class S_PauseMenu__MA : MonoBehaviour
         Application.Quit();
     }
 
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 
 }

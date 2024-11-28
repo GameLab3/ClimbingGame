@@ -756,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622035903508067817, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: m_Name
-      value: TriggerPrefab (6)
+      value: DashTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
@@ -978,13 +978,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5622035903508067817, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 135761738}
   m_SourcePrefab: {fileID: 100100000, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
 --- !u!4 &135761736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
   m_PrefabInstance: {fileID: 135761735}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &135761737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5622035903508067817, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+  m_PrefabInstance: {fileID: 135761735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &135761738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135761737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a56c2a3ed7723499e085b97b287722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6888884037131586964}
 --- !u!1001 &141840931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8982,6 +9003,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 826578319857466709, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
+      propertyPath: endScene
+      value: BadEndScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2783875107056245630, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13439,6 +13464,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a97a14286b8f234a88cbf35e9360e4b, type: 3}
+--- !u!114 &6888884037131586964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6318099070729336365, guid: 6a97a14286b8f234a88cbf35e9360e4b, type: 3}
+  m_PrefabInstance: {fileID: 6888884037131586963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b94933eb3e9d6a4f975a69037f29703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &7041662194752197815
 MeshFilter:
   m_ObjectHideFlags: 0

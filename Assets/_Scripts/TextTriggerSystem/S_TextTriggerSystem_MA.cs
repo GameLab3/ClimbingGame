@@ -86,7 +86,7 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
             }
             else
             {
-                dialogueText[displayNumber].options[i].assosiatedButton.button.onClick.AddListener(WrongOption);
+                 dialogueText[displayNumber].options[i].assosiatedButton.button.onClick.AddListener(WrongOption);
             }
         }
 
