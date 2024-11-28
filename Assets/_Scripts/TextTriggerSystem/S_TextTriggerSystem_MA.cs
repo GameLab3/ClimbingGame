@@ -19,16 +19,19 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
     [SerializeField] Transform buttonsParent;
 
     S_IncorrectAnswer_MA S_IncorrectAnswer_MA;
+    S_DialogueColorSwitcher_MA S_DialogueColorSwitcher_MA;
 
     private void Start()
     {
         S_IncorrectAnswer_MA = FindFirstObjectByType<S_IncorrectAnswer_MA>();
+        S_DialogueColorSwitcher_MA = FindFirstObjectByType<S_DialogueColorSwitcher_MA>();
     }
 
     bool isAtQuestion;
 
     void SetActive()
     {
+        S_DialogueColorSwitcher_MA.ChangeCameraColors();
         dialogueParent.SetActive(true);
     }
 
@@ -71,6 +74,7 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
         {
             dialogueParent.SetActive(false);
             Destroy(gameObject);
+            S_DialogueColorSwitcher_MA.ChangeCameraColors();
         }
     }
     void AskQuestion()
