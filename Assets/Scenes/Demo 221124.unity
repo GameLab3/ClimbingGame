@@ -9069,6 +9069,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1853651105137086898, guid: d56f8b496688d2b43a98a9d4fe60fad2, type: 3}
   m_PrefabInstance: {fileID: 1485865952}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1776208961 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3041515994710914192, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+  m_PrefabInstance: {fileID: 7253261192175353398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1788066289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11628,6 +11633,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1333912678432859790, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 1333912678432859790, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11640,6 +11649,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2074417833}
     - target: {fileID: 1969456490829226668, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 1969456490829226668, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11652,6 +11665,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2074417833}
     - target: {fileID: 2195585989364529525, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 2195585989364529525, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11663,6 +11680,10 @@ PrefabInstance:
       propertyPath: dialogueParent
       value: 
       objectReference: {fileID: 2074417833}
+    - target: {fileID: 2326990655746331025, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
     - target: {fileID: 2326990655746331025, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
@@ -11679,6 +11700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueTriggers
       objectReference: {fileID: 0}
+    - target: {fileID: 2738282967723331212, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
     - target: {fileID: 2738282967723331212, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
@@ -11732,6 +11757,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3173010985324713468, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 3173010985324713468, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11744,6 +11773,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2074417833}
     - target: {fileID: 3782545540010408381, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 3782545540010408381, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11755,11 +11788,19 @@ PrefabInstance:
       propertyPath: dialogueParent
       value: 
       objectReference: {fileID: 2074417833}
+    - target: {fileID: 4834637395529421037, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5248528570011957691, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6041205696616643281, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 6041205696616643281, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11771,6 +11812,10 @@ PrefabInstance:
       propertyPath: dialogueParent
       value: 
       objectReference: {fileID: 2074417833}
+    - target: {fileID: 7102681750905157227, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
     - target: {fileID: 7102681750905157227, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
@@ -11788,6 +11833,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6888884037131586964}
     - target: {fileID: 8553030577939398652, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 8553030577939398652, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11800,6 +11849,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2074417833}
     - target: {fileID: 9037703769309000257, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
+    - target: {fileID: 9037703769309000257, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -11811,6 +11864,10 @@ PrefabInstance:
       propertyPath: dialogueParent
       value: 
       objectReference: {fileID: 2074417833}
+    - target: {fileID: 9042355087652247210, guid: 928c02496262fd141b4588d4a827425b, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1776208961}
     - target: {fileID: 9042355087652247210, guid: 928c02496262fd141b4588d4a827425b, type: 3}
       propertyPath: textBox
       value: 
