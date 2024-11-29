@@ -20,6 +20,7 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
 
     S_IncorrectAnswer_MA S_IncorrectAnswer_MA;
     S_DialogueColorSwitcher_MA S_DialogueColorSwitcher_MA;
+    S_WinScene_MA S_WinScene_MA;
 
     int triggerInt;
     [SerializeField] Transform parent;
@@ -29,6 +30,9 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
     {
         S_IncorrectAnswer_MA = FindFirstObjectByType<S_IncorrectAnswer_MA>();
         S_DialogueColorSwitcher_MA = FindFirstObjectByType<S_DialogueColorSwitcher_MA>();
+        S_WinScene_MA = FindFirstObjectByType<S_WinScene_MA>();
+
+        if (S_DialogueColorSwitcher_MA == null) return;
 
         triggerInt = transform.GetSiblingIndex() +1;
         if (parent.transform.childCount <= triggerInt) { return; }
@@ -40,7 +44,7 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
 
     void SetActive()
     {
-        S_DialogueColorSwitcher_MA.ChangeCameraColors();
+        if (S_DialogueColorSwitcher_MA != null) { S_DialogueColorSwitcher_MA.ChangeCameraColors(); }
         dialogueParent.SetActive(true);
     }
 
@@ -98,9 +102,13 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
             {
                 dialogueText[displayNumber].options[i].assosiatedButton.button.onClick.AddListener(CorrectOption);
             }
+            else if (dialogueText[displayNumber].options[i].isWin)
+            {
+                dialogueText[displayNumber].options[i].assosiatedButton.button.onClick.AddListener(WinOption);
+            }
             else
             {
-                 dialogueText[displayNumber].options[i].assosiatedButton.button.onClick.AddListener(WrongOption);
+                dialogueText[displayNumber].options[i].assosiatedButton.button.onClick.AddListener(WrongOption);
             }
         }
 
@@ -127,6 +135,17 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
         }
         S_IncorrectAnswer_MA.InstantiateEnd();
     }
+
+    public void WinOption()
+    {
+        print("is win");
+        foreach(Transform item in buttonsParent)
+        {
+            Destroy(item.gameObject);
+        }
+        Debug.Log("buttons r gone");
+        S_WinScene_MA.InstantiateWin();
+    }
 }
 
 [Serializable]
@@ -135,6 +154,7 @@ public class ButtonSpecifics
     public string Answer;
     public S_ButtonHandler_MA assosiatedButton;
     public bool isCorrect;
+    public bool isWin;
 }
 [Serializable]
 public class Dialogue

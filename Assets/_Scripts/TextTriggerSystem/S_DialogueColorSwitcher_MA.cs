@@ -17,6 +17,8 @@ public class S_DialogueColorSwitcher_MA : MonoBehaviour
     {
         volume = FindFirstObjectByType<Volume>();
 
+        if (volume == null) return;
+
         volume.profile.TryGet(out vignette);
         volume.profile.TryGet(out shadowsMidtonesHighlights);
         volume.profile.TryGet(out chromaticAberration);
@@ -26,6 +28,7 @@ public class S_DialogueColorSwitcher_MA : MonoBehaviour
 
     public void ChangeCameraColors()
     {
+        if (volume == null) return;
         shouldBeActive = !shouldBeActive;
 
         vignette.active = shouldBeActive;

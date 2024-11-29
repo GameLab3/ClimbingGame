@@ -248,6 +248,133 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6120856381034969985, guid: 9ae83ebfaa15e5145880e213af78b05a, type: 3}
   m_PrefabInstance: {fileID: 1531985960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &13304257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1122576985}
+    m_Modifications:
+    - target: {fileID: 5150515360399111140, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622035903508067817, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_Name
+      value: WinTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 420649674}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: buttonsParent
+      value: 
+      objectReference: {fileID: 1053507072}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueParent
+      value: 
+      objectReference: {fileID: 2074417833}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[0].Text
+      value: Made it down, yay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[1].Text
+      value: I have always wanted to go up here again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.191899
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.334705
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 40.837727
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.314499
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 77.99779
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5622035903508067817, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 13304266}
+  m_SourcePrefab: {fileID: 100100000, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+--- !u!4 &13304258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+  m_PrefabInstance: {fileID: 13304257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &13304259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5622035903508067817, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+  m_PrefabInstance: {fileID: 13304257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &13304266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13304259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b801727d22e2bae45bb78e2378baaf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneReference: GoodEndScene
 --- !u!1001 &14641639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3092,6 +3219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DashTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
@@ -8176,6 +8307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerPrefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
@@ -17880,6 +18015,10 @@ PrefabInstance:
       value: TriggerPrefab (10)
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -20409,6 +20548,10 @@ PrefabInstance:
       value: TriggerPrefab (11)
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -21190,6 +21333,7 @@ Transform:
   - {fileID: 2009277877}
   - {fileID: 930668655}
   - {fileID: 1090618817}
+  - {fileID: 13304258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1122704321 stripped
@@ -21682,6 +21826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerPrefab (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
@@ -24433,6 +24581,10 @@ PrefabInstance:
       value: TriggerPrefab (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -24651,6 +24803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerPrefab (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
@@ -26975,6 +27131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerPrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
@@ -30819,6 +30979,10 @@ PrefabInstance:
       value: TriggerPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -30830,6 +30994,22 @@ PrefabInstance:
       propertyPath: dialogueParent
       value: 
       objectReference: {fileID: 2074417833}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[5].options.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[4].options.Array.data[1].isWin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[4].options.Array.data[0].isCorrect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[4].options.Array.data[1].isCorrect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: m_LocalScale.x
       value: 30.555836
@@ -30873,6 +31053,10 @@ PrefabInstance:
     - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422098490829591926, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37438,6 +37622,10 @@ PrefabInstance:
       value: TriggerPrefab (9)
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 420649674}
@@ -37589,6 +37777,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerPrefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
@@ -38269,6 +38461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerPrefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1122576985}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: textBox
       value: 
