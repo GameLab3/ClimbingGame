@@ -9,7 +9,7 @@ public class S_DialogueColorSwitcher_MA : MonoBehaviour
     ShadowsMidtonesHighlights shadowsMidtonesHighlights;
     ChromaticAberration chromaticAberration;
     ColorCurves colorCurves;
-    //PaniniProjection paniniProjection;
+    PaniniProjection paniniProjection;
 
     bool shouldBeActive;
 
@@ -23,7 +23,7 @@ public class S_DialogueColorSwitcher_MA : MonoBehaviour
         volume.profile.TryGet(out shadowsMidtonesHighlights);
         volume.profile.TryGet(out chromaticAberration);
         volume.profile.TryGet(out colorCurves);
-        //volume.profile.TryGet(out paniniProjection);
+        volume.profile.TryGet(out paniniProjection);
     }
 
     public void ChangeCameraColors()
@@ -35,7 +35,7 @@ public class S_DialogueColorSwitcher_MA : MonoBehaviour
         shadowsMidtonesHighlights.active = shouldBeActive;
         chromaticAberration.active = shouldBeActive;
         colorCurves.active = shouldBeActive;
-        //paniniProjection.active = shouldBeActive;
+        paniniProjection.active = shouldBeActive;
     }
 
 }
