@@ -7399,7 +7399,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 0e02c260b1f764a4ba922cbef1ef046d, type: 3}
   m_Resource: {fileID: 8300000, guid: 0e02c260b1f764a4ba922cbef1ef046d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -38831,6 +38831,10 @@ PrefabInstance:
       propertyPath: endScene
       value: BadEndScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1741346136135552820, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2783875107056245630, guid: cce62b84eccdf494f97227992db0bdb7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -50392,7 +50396,7 @@ PrefabInstance:
       objectReference: {fileID: 2074417833}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[0].Text
@@ -50404,11 +50408,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[2].Text
-      value: But I always wanted to be brave, like him.
+      value: "And me? I\u2019m just slowing down. Maybe I should stop. "
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[3].Text
-      value: "And me? I\u2019m just slowing down. Maybe I should stop. "
+      value: "Maybe\u2026 Maybe I can. Even if it\u2019s slow, I\u2019ve already
+        come this far. What\u2019s a little more?"
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[4].Text
@@ -50429,7 +50434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[3].isQuestion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[4].isQuestion
@@ -50449,7 +50454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[3].options.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[4].options.Array.size
@@ -50465,11 +50470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[2].options.Array.data[0].Answer
-      value: "So you\u2019re a fox today?"
+      value: "You should keep going. You\u2019re so far."
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[2].options.Array.data[1].Answer
-      value: You are so weird.
+      value: Halfway enough for today.
       objectReference: {fileID: 0}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: dialogueText.Array.data[2].options.Array.data[2].Answer
