@@ -119,7 +119,6 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
 
     public void CorrectOption()
     {
-        print("is correct :)");
         isAtQuestion = false;
 
         foreach (Transform item in buttonsParent)
@@ -131,7 +130,6 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
     }
     public void WrongOption()
     {
-        print("isn't correct :(");
         foreach (Transform item in buttonsParent)
         {
             Destroy(item.gameObject);
@@ -141,12 +139,10 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
 
     public void WinOption()
     {
-        print("is win");
         foreach(Transform item in buttonsParent)
         {
             Destroy(item.gameObject);
         }
-        Debug.Log("buttons r gone");
         S_WinScene_MA.InstantiateWin();
     }
 }
