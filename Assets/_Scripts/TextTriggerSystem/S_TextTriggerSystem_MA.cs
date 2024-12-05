@@ -86,7 +86,10 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
         else if (textCanProgress && dialogueText.Count >= displayNumber)
         {
             dialogueParent.SetActive(false);
-            nextTrigger.isTrigger = true;
+            if (nextTrigger != null)
+            {
+                nextTrigger.isTrigger = true;
+            }
             S_DialogueColorSwitcher_MA.ChangeCameraColors();
             Destroy(gameObject);
         }

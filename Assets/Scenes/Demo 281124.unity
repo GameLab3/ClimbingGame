@@ -354,6 +354,22 @@ PrefabInstance:
       propertyPath: dialogueText.Array.data[1].Text
       value: I have always wanted to go up here again.
       objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[1].isQuestion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[1].options.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[1].options.Array.data[0].isWin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: dialogueText.Array.data[1].options.Array.data[0].Answer
+      value: (...)
+      objectReference: {fileID: 0}
     - target: {fileID: 6682525451968357137, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.191899
