@@ -5,28 +5,39 @@ using UnityEngine.InputSystem;
 public class S_PlayerMovement_IS : MonoBehaviour
 {
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+    
+    [Header("Movement Settings")]
     [SerializeField] private float speed = 6f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float gravity = 20f;
+
+    [Header("Dash Settings")]
     [SerializeField] private float dashForce = 10f;
     [SerializeField] private float dashDuration = 0.5f;
-
     [SerializeField] private bool canDash;
+    
+    [Header("Control Options")]
     [SerializeField] private bool reverseAllControls;
     [SerializeField] private bool reverseControlsUpDown;
     [SerializeField] private bool reverseControlsLeftRight;
-
+    [SerializeField] private bool usingControlStick;
+    
+    [Header("References")]
+    [SerializeField] private GameObject playerCamera;
     [SerializeField] private Animator foxAnimator;
     
-    private float _movementX;
-    private float _movementY;
+    // Movement variables
+    // private float _movementX;
+    // private float _movementY;
+    private Vector2 _movement;
     private float _ySpeed;
 
+    // Dash variables
     private bool _hasDashed;
     private bool _isDashing;
     private float _dashX;
     private float _dashY;
-
+    
     private Vector2 _rotationVector;
     
     private Vector3 _moveDirection = Vector3.zero;
@@ -38,11 +49,19 @@ public class S_PlayerMovement_IS : MonoBehaviour
         _controller = GetComponent<CharacterController>();
     }
     
+    /// <summary>
+    /// Update currently active checkpoint
+    /// </summary>
+    /// <param name="checkPoint">Currently active checkpoint</param>
     public void SetCheckPoint(S_CheckPoint_IS checkPoint)
     {
         _checkPoint = checkPoint;
     }
     
+    /// <summary>
+    /// Set Dash allowance state
+    /// </summary>
+    /// <param name="value">On/Off</param>
     public void DashAllowed(bool value)
     {
         canDash = value;
@@ -98,10 +117,21 @@ public class S_PlayerMovement_IS : MonoBehaviour
             _dashY = input.y;
             return;
         }
-        _movementX = input.x;
-        _movementY = input.y;
+        //_movementX = input.x;
+        //_movementY = input.y;
+        _movement = new Vector2(input.x, input.y);
 
-        if (_movementX != 0 || _movementY != 0)
+        if (usingControlStick)
+        {
+            if (reverseAllControls)
+            {
+                _movement *= -1;
+            }
+            _movement = GetRotationalMovement(_movement);
+        }
+        
+
+        if (_movement.x != 0 || _movement.y != 0)
         {
             transform.rotation = Quaternion.Euler(0, GetRotation(), 0);
         }
@@ -121,10 +151,13 @@ public class S_PlayerMovement_IS : MonoBehaviour
         else if (canDash && !_isDashing && !_hasDashed)
         {
             StartCoroutine(Dash());
-            _dashX = _movementX;
+            _dashX = _movement.x;
+            _dashY = _movement.y;
+            _movement = Vector2.zero;
+            /*_dashX = _movementX;
             _dashY = _movementY;
             _movementX = 0;
-            _movementY = 0;
+            _movementY = 0;*/
         }
     }
     
@@ -137,9 +170,15 @@ public class S_PlayerMovement_IS : MonoBehaviour
 
         if (!_isDashing)
         {
-            _moveDirection = new Vector3(_movementX, _ySpeed, _movementY);
+            _moveDirection = new Vector3(_movement.x, _ySpeed, _movement.y);
+            
+            
+            // Rotates movement to be correct orientation
+            //_moveDirection = Quaternion.AngleAxis(playerCamera.transform.eulerAngles.y, Vector3.up) * _moveDirection;
+            
+            
             _moveDirection *= speed;
-            if (_movementX != 0 || _movementY != 0)
+            if (_movement.x != 0 || _movement.y != 0)
             {
                 foxAnimator.SetBool(IsWalking, _controller.isGrounded);
             }
@@ -170,9 +209,9 @@ public class S_PlayerMovement_IS : MonoBehaviour
         _ySpeed = 0;
         yield return new WaitForSeconds(dashDuration);
         _isDashing = false;
-        _movementX = _dashX;
-        _movementY = _dashY;
-        if (_movementX != 0 || _movementY != 0)
+        _movement.x = _dashX;
+        _movement.y = _dashY;
+        if (_movement.x != 0 || _movement.y != 0)
         {
             transform.rotation = Quaternion.Euler(0, GetRotation(), 0);
         }
@@ -180,13 +219,19 @@ public class S_PlayerMovement_IS : MonoBehaviour
 
     private int GetRotation()
     {
-        _rotationVector.x = _movementX;
-        _rotationVector.y = _movementY;
+        _rotationVector.x = _movement.x;
+        _rotationVector.y = _movement.y;
         _rotationVector.Normalize();
 
         if (_rotationVector == Vector2.zero) return 0;
         float angle = Mathf.Atan2(_rotationVector.x, _rotationVector.y) * Mathf.Rad2Deg;
         return (int) angle;
+    }
 
+    private Vector2 GetRotationalMovement(Vector2 movement)
+    {
+        var movementVector = new Vector3(movement.x, 0, movement.y);
+        var angle = Quaternion.AngleAxis(playerCamera.transform.eulerAngles.y, Vector3.up) * movementVector;
+        return new Vector2(angle.x, angle.z);
     }
 }
