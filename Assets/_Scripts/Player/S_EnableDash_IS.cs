@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class S_EnableDash_IS : MonoBehaviour
 {
-    [SerializeField] private S_PlayerMovement_IS player;
+    [SerializeField] private S_PlayerMovementNew_IS player;
     private bool _isActivated;
     
     private void Start()
     {
         if (player == null)
         {
-            player = FindFirstObjectByType<S_PlayerMovement_IS>();
+            player = FindFirstObjectByType<S_PlayerMovementNew_IS>();
         }
     }
     

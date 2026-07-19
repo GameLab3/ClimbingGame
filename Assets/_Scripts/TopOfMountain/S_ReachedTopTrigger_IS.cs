@@ -5,7 +5,7 @@ public class S_ReachedTopTrigger_IS : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private S_TurnCamera_IS turnCameraScript;
-    [SerializeField] private S_PlayerMovement_IS playerMovementScript;
+    [SerializeField] private S_PlayerMovementNew_IS playerMovementScript;
     [SerializeField] private S_ChangeSaturation_IS changeSaturationScript;
 
     [Header("Settings")]
@@ -25,7 +25,7 @@ public class S_ReachedTopTrigger_IS : MonoBehaviour
         }
         if (playerMovementScript == null)
         {
-            playerMovementScript = FindFirstObjectByType<S_PlayerMovement_IS>();
+            playerMovementScript = FindFirstObjectByType<S_PlayerMovementNew_IS>();
         }
     }
 
