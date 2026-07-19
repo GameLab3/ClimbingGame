@@ -8,6 +8,6 @@ public class S_CheckPoint_IS : MonoBehaviour
     {
         if (_isActivated) return;
         _isActivated = true;
-        other.GetComponent<S_PlayerMovement_IS>().SetCheckPoint(this);
+        other.GetComponent<S_PlayerMovementNew_IS>().SetCheckPoint(this);
     }
 }
