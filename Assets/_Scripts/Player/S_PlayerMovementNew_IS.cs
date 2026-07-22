@@ -23,10 +23,16 @@ public class S_PlayerMovementNew_IS : MonoBehaviour
     [SerializeField] private bool reverseControlsLeftRight;
     [SerializeField] private bool usingControlStick;
     
+    [Header("Cosmetic Settings")]
+    [SerializeField] private bool useParticles;
+    
     [Header("References")]
     [SerializeField] private GameObject playerCamera;
     [SerializeField] private Animator foxAnimator;
     [SerializeField] private GameObject touchInputCanvas;
+    [SerializeField] private ParticleSystem jumpParticle;
+    [SerializeField] private ParticleSystem landParticle;
+    [SerializeField] private ParticleSystem dashParticle;
     
     // Movement variables
     // private float _movementX;
@@ -45,7 +51,7 @@ public class S_PlayerMovementNew_IS : MonoBehaviour
     private Vector3 _moveDirection = Vector3.zero;
     private CharacterController _controller;
     private S_CheckPoint_IS _checkPoint;
-
+    
     private void OnEnable()
     {
         S_InputReader.Jumped += Jump;
@@ -165,10 +171,12 @@ public class S_PlayerMovementNew_IS : MonoBehaviour
         {
             _ySpeed = jumpForce;
             foxAnimator.SetBool(IsWalking, false);
+            if (useParticles) jumpParticle.Play();
         }
         else if (canDash && !_isDashing && !_hasDashed)
         {
             StartCoroutine(Dash());
+            if (useParticles) dashParticle.Play();
             _dashX = _movement.x;
             _dashY = _movement.y;
             _movement = Vector2.zero;
@@ -232,6 +240,11 @@ public class S_PlayerMovementNew_IS : MonoBehaviour
         }
         
         _controller.Move(_moveDirection * Time.deltaTime);
+
+        if (_controller.isGrounded && _ySpeed < -1f && useParticles)
+        {
+            landParticle.Play();
+        }
         
         if (_controller.isGrounded && !Mathf.Approximately(_ySpeed, -1))
         {
