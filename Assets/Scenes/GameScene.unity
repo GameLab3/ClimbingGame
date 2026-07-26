@@ -29651,6 +29651,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 420649674}
     - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
+      propertyPath: hasQuestions
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956843554300246631, guid: 58f7e326044a2444bb5d1becb98d15fa, type: 3}
       propertyPath: buttonsParent
       value: 
       objectReference: {fileID: 1053507072}
@@ -76314,6 +76318,7 @@ SceneRoots:
   - {fileID: 1776559473}
   - {fileID: 613321399}
   - {fileID: 6917015274194749820}
+  - {fileID: 1217496729}
   - {fileID: 1214082407}
   - {fileID: 330585546}
   - {fileID: 1325634790}
@@ -76335,6 +76340,5 @@ SceneRoots:
   - {fileID: 535804990}
   - {fileID: 1880660517}
   - {fileID: 1572994462}
-  - {fileID: 1217496729}
   - {fileID: 506183898}
   - {fileID: 683885205}

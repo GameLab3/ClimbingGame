@@ -9,6 +9,10 @@ public class S_InputReader : MonoBehaviour
     [SerializeField] private JoystickController joystickController;
     
     private Vector2 _movement;
+
+    // Will hopefully fix joystick reading bugs
+    private bool _stopJoystickInput;
+    private Vector2 _touchInput;
     
     // Player Game Actions
     private InputAction _moveAction;
@@ -42,9 +46,11 @@ public class S_InputReader : MonoBehaviour
 
     private void Update()
     {
-        Movement?.Invoke(joystickController.InputDirection == Vector2.zero
+        _touchInput = _stopJoystickInput ? Vector2.zero : joystickController.InputDirection;
+        
+        Movement?.Invoke(_touchInput == Vector2.zero
             ? _moveAction.ReadValue<Vector2>()
-            : joystickController.InputDirection);
+            : _touchInput);
 
         if (_jumpAction.WasPressedThisFrame())
         {
@@ -54,11 +60,13 @@ public class S_InputReader : MonoBehaviour
         if (_touchOnAction.WasPressedThisFrame())
         {
             TouchedScreen?.Invoke();
+            _stopJoystickInput = false;
         }
 
         if (_touchOffAction.WasPressedThisFrame())
         {
             KeyboardPressed?.Invoke();
+            _stopJoystickInput = true;
         }
     }
 
