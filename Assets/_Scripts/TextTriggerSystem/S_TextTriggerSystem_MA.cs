@@ -68,7 +68,7 @@ public class S_TextTriggerSystem_MA : MonoBehaviour
             DisplayText();
         }
     }
-
+    //remove OnAttack og gjør så player input kan fjernes i MenuManager og DialogueTriggerene
     void DisplayText()
     {
         if (textCanProgress && dialogueText.Count > displayNumber)

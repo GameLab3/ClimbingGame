@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
+//this script adds colors to the camera when the dialogue is active
 public class S_DialogueColorSwitcher_MA : MonoBehaviour
 {
     Volume volume;
