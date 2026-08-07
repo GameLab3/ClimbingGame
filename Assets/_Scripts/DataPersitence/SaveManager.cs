@@ -2,12 +2,17 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class S_SaveManager : MonoBehaviour
+public class SaveManager : MonoBehaviour
 {
+    [Header("File Storage Configuration")]
+    [SerializeField] private string fileName;
+    
     private GameData _gameData;
     
     private List<IDataPersistence> dataPersistenceObjects;
-    public static S_SaveManager Instance {get; private set;}
+    
+    private FileDataHandler dataHandler;
+    public static SaveManager Instance {get; private set;}
     
     private void Awake()
     {
@@ -23,8 +28,9 @@ public class S_SaveManager : MonoBehaviour
 
     private void Start()
     {
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         dataPersistenceObjects = FindAllDataPersistenceObjects();
-        LoadGameData();
+        LoadGame();
     }
     
     public void CreateNewGameData()
@@ -40,18 +46,35 @@ public class S_SaveManager : MonoBehaviour
         }
     }
 
-    public void LoadGameData()
+    public void LoadGame()
     {
+        _gameData = dataHandler.Load();
+        
         if (_gameData == null)
         {
             Debug.Log("Data is null");
             CreateNewGameData();
         }
+
+        foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
+        {
+            dataPersistenceObject.LoadGameData(_gameData);
+        }
     }
     
-    public void SaveGameData()
+    public void SaveGame()
     {
+        foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
+        {
+            dataPersistenceObject.SaveGameData(ref _gameData);
+        }
         
+        dataHandler.Save(_gameData);
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveGame();
     }
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()

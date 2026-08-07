@@ -66,6 +66,11 @@ public class S_RespawnManager : MonoBehaviour, IDataPersistence
     {
         return checkPoints;
     }
+
+    public S_RespawnPoint[] GetRespawnArray()
+    {
+        return checkPoints.ToArray();
+    }
     
     [Button]
     public S_RespawnPoint GetActiveRespawnPoint(int number = 0)
