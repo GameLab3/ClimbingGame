@@ -41,6 +41,35 @@ public class FileDataHandler
         }
         return loadedData;
     }
+    
+    public SettingsData LoadSettings()
+    {
+        string fullPath = Path.Combine(dataDirectory, dataFileName);
+
+        SettingsData loadedData = null;
+
+        if (File.Exists(fullPath))
+        {
+            try
+            {
+                string dataToLoad = "";
+                using (FileStream stream = new FileStream(fullPath, FileMode.Open))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        dataToLoad = reader.ReadToEnd();
+                    }
+                }
+                
+                loadedData = JsonUtility.FromJson<SettingsData>(dataToLoad);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error when loading data from file: {fullPath}\n{e}");
+            }
+        }
+        return loadedData;
+    }
 
     public void Save(GameData gameData)
     {
@@ -51,6 +80,30 @@ public class FileDataHandler
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
             
             string dataToStore = JsonUtility.ToJson(gameData, true);
+
+            using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+            {
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    writer.Write(dataToStore);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error when trying to save data to a file: {fullPath}\n{e}");
+        }
+    }
+    
+    public void SaveSettings(SettingsData settings)
+    {
+        string fullPath = Path.Combine(dataDirectory, dataFileName);
+
+        try
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+            
+            string dataToStore = JsonUtility.ToJson(settings, true);
 
             using (FileStream stream = new FileStream(fullPath, FileMode.Create))
             {
