@@ -13,6 +13,6 @@ public class SettingsData
         SFXVolume = 0.5f;
         MusicVolume = 0.5f;
         PixelModeStatus = false;
-        PixelModeValue = 0;
+        PixelModeValue = 1;
     }
 }

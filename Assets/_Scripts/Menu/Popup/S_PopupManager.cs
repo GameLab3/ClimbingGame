@@ -42,6 +42,7 @@ public class S_PopupManager : MonoBehaviour
             var index = i;
             _popupScreen.GetButton(i).OnClick += HidePopupScreen;
             _popupScreen.GetButton(i).OnClick += () => popupSpecifics.buttons[index].buttonEvent?.Invoke();
+            _popupScreen.GetButton(i).OnClick += () => popupSpecifics.buttons[index].buttonActionEvent?.Invoke();
         }
     }
 
@@ -67,6 +68,7 @@ public class S_PopupManager : MonoBehaviour
         _popupScreen.GetButton(0).OnClick += HidePopupScreen;
         if (popupSpecifics.buttons.Length <= 0) return;
         _popupScreen.GetButton(0).OnClick += () => popupSpecifics.buttons[0].buttonEvent?.Invoke();
+        _popupScreen.GetButton(0).OnClick += () => popupSpecifics.buttons[0].buttonActionEvent?.Invoke();
     }
 
     private void HidePopupScreen()

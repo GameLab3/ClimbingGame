@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class S_PixelModeSetting : MonoBehaviour
+public class S_PixelModeSetting : MonoBehaviour, ISettingsPersistence
 {
     [SerializeField] private Toggle pixelModeToggle;
     [SerializeField] private Slider pixelModeSlider;
@@ -30,12 +30,22 @@ public class S_PixelModeSetting : MonoBehaviour
     private void ToggleChanged(bool value)
     {
         pixelModeSlider.interactable = value;
-        SettingsManager.Instance.ChangePixelModeStatus(value);
     }
 
     private void SliderChanged(float value)
     {
         pixelModeValueText.text = value.ToString();
-        SettingsManager.Instance.ChangePixelModeSetting(value);
+    }
+
+    public void LoadSettingsData(SettingsData settings)
+    {
+        pixelModeToggle.isOn = settings.PixelModeStatus;
+        pixelModeSlider.value = settings.PixelModeValue;
+    }
+
+    public void SaveSettingsData(ref SettingsData settings)
+    {
+        settings.PixelModeStatus = pixelModeToggle.isOn;
+        settings.PixelModeValue = (int)pixelModeSlider.value;
     }
 }

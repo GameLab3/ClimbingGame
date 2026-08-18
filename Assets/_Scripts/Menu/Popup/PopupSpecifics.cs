@@ -22,10 +22,29 @@ public class ButtonsInfo
 {
     public string buttonText;
     public UnityEvent buttonEvent;
+    public Action buttonActionEvent;
 
+    public ButtonsInfo(string buttonText)
+    {
+        this.buttonText = buttonText;
+    }
+    
     public ButtonsInfo(string buttonText, UnityEvent buttonEvent)
     {
         this.buttonText = buttonText;
         this.buttonEvent = buttonEvent;
+    }
+    
+    public ButtonsInfo(string buttonText, Action buttonActionEvent)
+    {
+        this.buttonText = buttonText;
+        this.buttonActionEvent = buttonActionEvent;
+    }
+
+    public ButtonsInfo(string buttonText, UnityEvent buttonEvent, Action buttonActionEvent)
+    {
+        this.buttonText = buttonText;
+        this.buttonEvent = buttonEvent;
+        this.buttonActionEvent = buttonActionEvent;
     }
 }

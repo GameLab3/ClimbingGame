@@ -14,6 +14,8 @@ public class SettingsManager : MonoBehaviour
     private FileDataHandler fileDataHandler;
     public static SettingsManager Instance {get; private set;}
 
+    private bool loaded;
+
     private void Awake()
     {
         if (!Instance)
@@ -32,7 +34,7 @@ public class SettingsManager : MonoBehaviour
     {
         fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         settingsPersistences = FindAllSettingsPersistences();
-        
+        Load();
     }
 
     public void CreateNewSettings()
@@ -40,7 +42,25 @@ public class SettingsManager : MonoBehaviour
         settingsData = new SettingsData();
     }
 
+    public void ResetSettings()
+    {
+        settingsData = new SettingsData();
+        settingsPersistences = FindAllSettingsPersistences();
+        foreach (ISettingsPersistence settingsPersistence in settingsPersistences)
+        {
+            settingsPersistence.LoadSettingsData(settingsData);
+        }
+        fileDataHandler.SaveSettings(settingsData);
+    }
+
     public void LoadSettings()
+    {
+        if (!loaded) return;
+        settingsPersistences = FindAllSettingsPersistences();
+        Load();
+    }
+
+    private void Load()
     {
         settingsData = fileDataHandler.LoadSettings();
         if (settingsData == null)
@@ -52,9 +72,17 @@ public class SettingsManager : MonoBehaviour
         {
             settingsPersistences.LoadSettingsData(settingsData);
         }
+        
+        if (!loaded) loaded = true;
     }
 
     public void SaveSettings()
+    {
+        settingsPersistences = FindAllSettingsPersistences();
+        Save();
+    }
+
+    private void Save()
     {
         foreach (ISettingsPersistence settingsPersistences in settingsPersistences)
         {
@@ -64,19 +92,10 @@ public class SettingsManager : MonoBehaviour
         fileDataHandler.SaveSettings(settingsData);
     }
 
-    public void ChangePixelModeStatus(bool value)
+    private void OnApplicationQuit()
     {
-        
+        SaveSettings();
     }
-
-    public void ChangePixelModeSetting(float value)
-    {
-        
-    }
-    
-    
-    
-    
     
     private List<ISettingsPersistence> FindAllSettingsPersistences()
     {
