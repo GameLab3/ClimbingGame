@@ -9,13 +9,13 @@ public class S_TestPopupManager : MonoBehaviour
     [Button]
     public void TestPopupOn()
     {
-        S_PopupManager.Instance.ShowPopupScreen(popupSpecifics);
+        PopupManager.Instance.ShowPopupScreen(popupSpecifics);
     }
 
     [Button]
     public void AnotherTest()
     {
-        S_PopupManager.Instance.ShowTextOnlyPopupScreen(popupSpecifics);
+        PopupManager.Instance.ShowTextOnlyPopupScreen(popupSpecifics);
     }
 
     public void ShowTextInConsole(string text)

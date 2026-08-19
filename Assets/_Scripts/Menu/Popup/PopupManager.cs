@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class S_PopupManager : MonoBehaviour
+public class PopupManager : MonoBehaviour
 {
-    public static S_PopupManager Instance;
+    public static PopupManager Instance {get; private set;}
 
     [SerializeField] private S_PopupScreen popupScreenPrefab;
     [SerializeField] private S_PopupScreen textOnlyPopupScreenPrefab;
@@ -55,10 +55,11 @@ public class S_PopupManager : MonoBehaviour
         if (!textOnlyPopupScreenPrefab) return;
         if (popupSpecifics == null) return;
         if (_popupScreen) HidePopupScreen();
-        
-        ButtonsInfo[] buttonsInfo = new ButtonsInfo[1];
-        
-        buttonsInfo[0] = popupSpecifics.buttons.Length > 0 ? popupSpecifics.buttons[0] : new ButtonsInfo("", new UnityEvent());
+
+        ButtonsInfo[] buttonsInfo = new ButtonsInfo[]
+        {
+            popupSpecifics.buttons.Length > 0 ? popupSpecifics.buttons[0] : new ButtonsInfo("")
+        };
         
         var newPopupSpecifics = new PopupSpecifics(popupSpecifics.title, popupSpecifics.description, buttonsInfo);
         

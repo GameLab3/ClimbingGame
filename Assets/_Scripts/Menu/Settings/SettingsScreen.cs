@@ -21,6 +21,6 @@ public class SettingsScreen : MonoBehaviour
             new ButtonsInfo("No")
         };
         
-        S_PopupManager.Instance.ShowPopupScreen(new PopupSpecifics("Are you sure?", "This will reset all settings back to their default values.", popupButtons));
+        PopupManager.Instance.ShowPopupScreen(new PopupSpecifics("Are you sure?", "This will reset all settings back to their default values.", popupButtons));
     }
 }

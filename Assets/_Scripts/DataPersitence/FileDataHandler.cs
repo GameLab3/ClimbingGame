@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 public class FileDataHandler
@@ -13,9 +14,9 @@ public class FileDataHandler
         this.dataFileName = dataFileName;
     }
 
-    public GameData Load()
+    public GameData Load(string profileId)
     {
-        string fullPath = Path.Combine(dataDirectory, dataFileName);
+        string fullPath = Path.Combine(dataDirectory, profileId, dataFileName);
 
         GameData loadedData = null;
 
@@ -71,9 +72,9 @@ public class FileDataHandler
         return loadedData;
     }
 
-    public void Save(GameData gameData)
+    public void Save(GameData gameData, string profileId)
     {
-        string fullPath = Path.Combine(dataDirectory, dataFileName);
+        string fullPath = Path.Combine(dataDirectory, profileId, dataFileName);
 
         try
         {
@@ -117,5 +118,39 @@ public class FileDataHandler
         {
             Debug.LogError($"Error when trying to save data to a file: {fullPath}\n{e}");
         }
+    }
+
+    public Dictionary<string, GameData> LoadAllProfiles()
+    {
+        Dictionary<string, GameData> profileDictionary = new Dictionary<string, GameData>();
+        
+        // Loop through all folders in the directory
+        IEnumerable<DirectoryInfo> dirInfos = new DirectoryInfo(dataDirectory).EnumerateDirectories();
+        foreach (DirectoryInfo dirInfo in dirInfos)
+        {
+            string profileId = dirInfo.Name;
+            
+            // This will check if we are adding the correct type of data to the dictionary
+            string fullPath = Path.Combine(dataDirectory, profileId, dataFileName);
+            if (!File.Exists(fullPath))
+            {
+                continue;
+            }
+            
+            // Load the data and add it to the dictionary
+            GameData profileData = Load(profileId);
+
+            if (profileData != null)
+            {
+                profileDictionary.Add(profileId, profileData);
+            }
+            else
+            {
+                Debug.LogError($"Error when loading data from file: {fullPath}");
+            }
+            
+        }
+        
+        return profileDictionary;
     }
 }
