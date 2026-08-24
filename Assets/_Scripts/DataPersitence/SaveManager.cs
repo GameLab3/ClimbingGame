@@ -35,18 +35,25 @@ public class SaveManager : MonoBehaviour
         dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
+
+    public void ChangeSelectedProfileId(string profileId)
+    {
+        selectedProfileId = profileId;
+        LoadGame();
+    }
     
     public void CreateNewGameData()
     {
-        _gameData = new GameData
-        {
-            respawnPoints = new S_RespawnPoint[S_RespawnManager.Instance.GetRespawnPointCount()]
-        };
-        var list = S_RespawnManager.Instance.GetRespawnList();
-        for (int i = 0; i < list.Count; i++)
-        {
-            _gameData.respawnPoints[i] = list[i];
-        }
+        _gameData = new GameData();
+        //_gameData = new GameData
+        //{
+        //    respawnPoints = new S_RespawnPoint[S_RespawnManager.Instance.GetRespawnPointCount()]
+        //};
+        //var list = S_RespawnManager.Instance.GetRespawnList();
+        //for (int i = 0; i < list.Count; i++)
+        //{
+        //    _gameData.respawnPoints[i] = list[i];
+        //}
     }
 
     public void LoadGame()
