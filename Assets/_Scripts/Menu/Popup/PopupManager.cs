@@ -19,6 +19,7 @@ public class PopupManager : MonoBehaviour
         else if (Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
         DontDestroyOnLoad(gameObject);
     }

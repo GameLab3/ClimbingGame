@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109a126441b3ccb40a0af795b3c2795e, type: 3}
+  m_Name: SoundDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::SoundDatabase
+  musicList:
+  - name: Wow what a music
+    audioClips:
+    - {fileID: 8300000, guid: 0e02c260b1f764a4ba922cbef1ef046d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+  sfxList:
+  - name: Incredible Sound
+    audioClips:
+    - {fileID: 8300000, guid: 7535b3d829338fc48a24ae12ce97eae6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+  - name: Button Click
+    audioClips:
+    - {fileID: 8300000, guid: e170955ed2d56cd43b2fa9c64ba2826b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0

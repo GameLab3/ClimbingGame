@@ -28,7 +28,7 @@ public class SaveFileScreen : MonoBehaviour
         ActivateMenu();
     }
 
-    public void ActivateMenu()
+    private void ActivateMenu()
     {
         Dictionary<string, GameData> profilesGameData = SaveManager.Instance.GetAllProfilesGameData();
 

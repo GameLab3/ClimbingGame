@@ -8,7 +8,7 @@ public class ProfileIdsDatabase : ScriptableObject
     
     private static ProfileIdsDatabase _instance;
 
-    public static ProfileIdsDatabase Instance
+    private static ProfileIdsDatabase instance
     {
         get
         {
@@ -22,15 +22,15 @@ public class ProfileIdsDatabase : ScriptableObject
 
     public static int GetNumberOfProfileIds()
     {
-        if (Instance) return Instance.profileIds.Count;
+        if (instance) return instance.profileIds.Count;
         return -1;
     }
 
     public static string GetProfileId(int index)
     {
-        if (Instance && Instance.profileIds.Count > index && index >= 0)
+        if (instance && instance.profileIds.Count > index && index >= 0)
         {
-            return Instance.profileIds[index];
+            return instance.profileIds[index];
         }
         
         return "noProfileId";
