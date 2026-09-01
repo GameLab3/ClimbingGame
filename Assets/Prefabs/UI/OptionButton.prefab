@@ -103,6 +103,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -149,6 +150,7 @@ GameObject:
   - component: {fileID: 7989719899105560315}
   - component: {fileID: 3792435805623224646}
   - component: {fileID: 7338304764094535708}
+  - component: {fileID: -1805761431517891407}
   m_Layer: 5
   m_Name: OptionButton
   m_TagString: Untagged
@@ -283,3 +285,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 199941784995869065}
+--- !u!114 &-1805761431517891407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464509281802558673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4c50cd1c17d3e41b34d97a99f63e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonClickSound

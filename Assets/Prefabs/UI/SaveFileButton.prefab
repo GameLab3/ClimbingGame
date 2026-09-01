@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 8291513311134077253}
   - component: {fileID: 8967286258278172055}
   - component: {fileID: 1339169560527980968}
+  - component: {fileID: 5712174867068329103}
   m_Layer: 5
   m_Name: SaveFileButton
   m_TagString: Untagged
@@ -496,3 +497,15 @@ MonoBehaviour:
   profileId: 
   noDataContent: {fileID: 1111475202924213635}
   hasDataContent: {fileID: 6498540079117185350}
+--- !u!114 &5712174867068329103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7149270640575449995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4c50cd1c17d3e41b34d97a99f63e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonClickSound
